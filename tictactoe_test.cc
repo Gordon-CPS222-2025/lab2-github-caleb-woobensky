@@ -25,7 +25,7 @@ bool tttb_winner_vertical_test() {
     return true;
 }
 
-
+// New function by Caleb Peterson - me
 bool tttb_winner_diagonal_test() {
     TictactoeBoard b;
     b.set(0, 0, TictactoeXO::X);
