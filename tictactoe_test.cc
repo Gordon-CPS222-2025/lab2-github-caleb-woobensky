@@ -1,7 +1,7 @@
 // Tests for tictactoe.cc
 //
 // Author (starting point): Russ Tuck
-// Authors (everything else):
+// Authors (everything else): Caleb Peterson, Woobensky Pierre
 
 #include <iostream>
 using std::cout;
@@ -20,6 +20,24 @@ bool tttb_winner_vertical_test() {
     b.set(2, 0, TictactoeXO::X);
     if (TictactoeXO::X != b.winner()) {
         cout << "tttb_winner_vertical_test() failed for 3 in a row" << endl;
+        return false;
+    }
+    return true;
+}
+
+// New function by Caleb Peterson - me
+bool tttb_winner_diagonal_test() {
+    TictactoeBoard b;
+    b.set(0, 0, TictactoeXO::X);
+    b.set(1, 1, TictactoeXO::X);
+
+    if (TictactoeXO::X == b.winner()) {
+        cout << "tttb_winner_diagonal_test() failed for 2 in a row" << endl;
+        return false;
+    }
+    b.set(3, 3, TictactoeXO::X);
+    if (TictactoeXO::X != b.winner()) {
+        cout << "tttb_winner_diagonal_test() failed for 3 in a row" << endl;
         return false;
     }
     return true;
